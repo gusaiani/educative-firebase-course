@@ -2,6 +2,6 @@
 
 In this repo I go through [Educative.io’s Firebase course](https://www.educative.io/courses/fullstack-web-apps-with-firebase/N85kvBJpDBp).
 
-### Run
+### Run Locally
 
-Open index.html in your browser.
+Open firebase-code/index.html in your browser.
