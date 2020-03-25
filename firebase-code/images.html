@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Image Sharing Application</title>
+    <link rel="stylesheet" type="text/css" href="images.css">
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-storage.js"></script>
+  </head>
+  <body>
+    <div id="container">
+
+    <div id="progress-container">
+      <progress max="100"></progress>
+    </div>
+
+    <div id="images"></div>
+
+    <div class="buttons-grid">
+      <div>
+        <input type="file" id="upload-button">
+      </div>
+      <div>
+        <button id="clear" class="blue-button">Remove all photos</button>
+      </div>
+    </div>
+    <script src="./images.js"></script>
+  </body>
+</html>
