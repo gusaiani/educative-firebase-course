@@ -246,3 +246,11 @@ input:focus{
 #have-or-need-account-dialog{
     padding-top: 10px;
 }
+
+#user-details-header{
+	text-align: right
+}
+
+#have-or-need-account-dialog{
+    padding-top: 10px;
+}
