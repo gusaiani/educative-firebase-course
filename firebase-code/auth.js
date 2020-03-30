@@ -88,6 +88,8 @@ authAction.forEach(eachItem => {
       showSignInForm()
     } else if (chosen === 'show-forgot-password-form') {
       showForgotPasswordForm()
+    } else if (chosen === 'sign-out') {
+      signOut()
     }
   })
 })
@@ -122,3 +124,24 @@ createUserForm.addEventListener(`submit`, event => {
       console.error(error.message)
     })
 });
+
+signOut = () => {
+  auth.signOut()
+  hideAuthElements()
+}
+
+signInForm.addEventListener('submit', event => {
+  event.preventDefault()
+
+  const email = document.getElementById('sign-in-email').value
+  const password = document.getElementById('sign-in-password').value
+
+  auth.signInWithEmailAndPassword(email, password)
+    .then(() => {
+      signInForm.reset()
+      hideAuthElements()
+    })
+    .catch((error) => {
+      console.error(error.message)
+    })
+})

@@ -254,3 +254,28 @@ input:focus{
 #have-or-need-account-dialog{
     padding-top: 10px;
 }
+
+#account {
+    background-color: #f9f4f4;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+#dashboard{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px 40px 50px 40px;
+}
+
+#profile-photo-account{
+    display: block;
+    max-width: 150px;
+    margin: auto;
+    border-radius: 100px;
+}
+
+#display-name{
+    margin: 30px 20px;
+    float: right
+}
