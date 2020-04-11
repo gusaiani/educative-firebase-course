@@ -1,27 +1,27 @@
 /* Modal and Authentication Actions Listener */
 body{
-	font-family: 'Open Sans', sans-serif;
-	margin: 0px;
-	color: gray;
-	text-align: center
+    font-family: 'Open Sans', sans-serif;
+    margin: 0px;
+    color: gray;
+    text-align: center
 }
 
 h1{
-	margin:  0px 0px 20px 0px;
-	font-size: 24px;
-	font-family: 'Nothing You Could Do', cursive;
+    margin:  0px 0px 20px 0px;
+    font-size: 24px;
+    font-family: 'Nothing You Could Do', cursive;
 }
 
 img{
-	width: 100%;
+    width: 100%;
 }
 
 .auth{
-	cursor: pointer;
+    cursor: pointer;
 }
 
 #header >  div > button{
-	margin-top: 10px
+    margin-top: 10px
 }
 
 #header{
@@ -99,22 +99,22 @@ img{
 }
 
 #modal{
-	display:none;
-	position: fixed;
-	z-index: 1;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: rgba(0,0,0,0.4)
+    display:none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4)
 }
 
 #modal-content{
-	background-color: #fefefe;
-	margin: 4% auto;
-	border: 1px solid #888888;
-	max-width: 350px;
+    background-color: #fefefe;
+    margin: 4% auto;
+    border: 1px solid #888888;
+    max-width: 350px;
 }
 
 
@@ -124,7 +124,7 @@ img{
     border-radius: 100px;
     padding: 4px;
     float: right;
-    background-color: #b2dffb ;
+    background-color: #b2dffb;
     box-shadow: 0 4px #93b8cf;
     margin: -13px -13px 0px 0px;
 }
@@ -159,7 +159,7 @@ button{
 }
 
 .purple-button{
-    background-color: #c2b0c9 ;
+    background-color: #c2b0c9;
     box-shadow: 0 4px #9f90a5;
 }
 
@@ -171,32 +171,34 @@ button{
     box-shadow: 0 0 #9f90a5;
 }
 
-button {
-    background-color: #b2dffb ;
+button{
+    background-color: #b2dffb;
     box-shadow: 0 4px #93b8cf;
 }
 
-button:hover {
+button:hover{
     box-shadow: 0 2px #93b8cf;
 }
 
-button:active {
+button:active{
     box-shadow: 0 0 #93b8cf;
 }
 
-.other-button{
-    background-color: #cccccc ;
+.gray-button{
+    background-color: #cccccc;
     box-shadow: 0 4px #afaeae;
 }
 
-.other-button:hover{
+.gray-button:hover{
     box-shadow: 0 2px #afaeae;
 }
 
-.other-button:active{
+.gray-button:active{
     box-shadow: 0 0 #afaeae;
 }
 
+
+/* Authentication Forms - 1*/
 input{
     width: 100%;
     font-size: 20px;
@@ -213,9 +215,6 @@ input:focus{
     outline: none;
 }
 
-#sign-in-link, #create-user-link{
-    color: #32a1d7
-}
 
 #create-user-inputs, #sign-in-inputs{
     display: grid;
@@ -239,22 +238,32 @@ input:focus{
     margin-top: -17px;
 }
 
-.hide {
-  display: none !important;
+#create-user-link, #sign-in-link{
+    color: #c2b0c9;
 }
 
-#have-or-need-account-dialog{
-    padding-top: 10px;
+#sign-out-button{
+    max-width: 180px;
 }
 
+/* Authentication Forms - 2*/
+.hide{
+	display: none !important;
+}
+
+
+/* Making Your App Aware of Users */
 #user-details-header{
-	text-align: right
+    text-align: right
 }
 
 #have-or-need-account-dialog{
     padding-top: 10px;
 }
 
+
+
+/* Showing a User Dashboard */
 #account {
     background-color: #f9f4f4;
     padding: 30px;
@@ -280,15 +289,20 @@ input:focus{
     float: right
 }
 
+
+
+
+
+/* Handling Error and Success Messages */
 #message{
-  display: none;
-  border: 1px solid;
-  position: relative;
-  margin: 40px 20px 20px 20px;
-  padding: 10px;
+    display: none;
+    border: 1px solid;
+    position: relative;
+    margin: 40px 20px 20px 20px;
+    padding: 10px;
 }
 
-/* Loading visual Lesson */
+/* Loading visual */
 #loading-outer-container{
     margin: 40px auto;
 }
@@ -310,53 +324,57 @@ input:focus{
     margin:0 auto;
 }
 
-#circle2{
-    background-color:#39B1C6
+#circle1{
+	background-color: #39B1C6;
 }
 
-#circle1{
-    background-color:#EC3F8C
+#circle2{
+	background-color: #EC3F8C;
 }
 
 #circle1, #circle2{
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    opacity:.6;
-    position:absolute;
-    top:0;
-    left:0;
-    -webkit-animation:bounce 2s infinite ease-in-out;
-    animation:bounce 2s infinite ease-in-out
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	opacity: 0.6;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-animation:bounce 2s infinite ease-in-out;
+	animation:bounce 2s infinite ease-in-out;
 }
 
 #circle2{
-    -webkit-animation-delay:-1s;
-    animation-delay:-1s
+	-webkit-animation-delay: -1s;
+	animation-delay: -1s;
 }
 
 @-webkit-keyframes bounce {
-    0%,100%{
-        -webkit-transform:scale(0)
-    }
-    50%{
-        -webkit-transform:scale(1)
-    }
+	0%, 100%{
+		-webkit-transform: scale(0)
+	}
+	50%{
+		-webkit-transform: scale(1)
+	}
 }
 
-@keyframes bounce{
-    0%,100% {
-        transform:scale(0);
-        -webkit-transform:scale(0)
-    }
 
-    50% {
-        transform:scale(1);
-        -webkit-transform:scale(1)
-    }
+@webkit-keyframes bounce {
+	0%, 100%{
+		-webkit-transform: scale(0)
+	}
+	50%{
+		-webkit-transform: scale(1)
+	}
 }
 
+/* Creating Your First “To-Do” Item */
 #to-do-list-form > button {
     max-width: 150px;
     margin-top: 30px;
+}
+
+/* Deleting Completed Items */
+.delete-button{
+	margin-left: 20px;
 }
