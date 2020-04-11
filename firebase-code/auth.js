@@ -99,13 +99,19 @@ const signInForm = document.getElementById('sign-in-form')
 const forgotPasswordForm = document.getElementById('forgot-password-form')
 
 hideAuthElements = () => {
+  clearMessage()
+  loading('hide')
   createUserForm.classList.add('hide')
   signInForm.classList.add('hide')
   forgotPasswordForm.classList.add('hide')
+  // createUserDialog.classList.add('hide')
+  // signInDialog.classList.add('hide')
+  // haveOrNeedAccountDialog.classList.add('hide')
 }
 
 createUserForm.addEventListener(`submit`, event => {
   event.preventDefault();
+  loading('show')
   // Grab values from form
   const displayName = document.getElementById(`create-user-display-name`).value;
   const email = document.getElementById(`create-user-email`).value;
@@ -121,7 +127,10 @@ createUserForm.addEventListener(`submit`, event => {
       hideAuthElements()
     })
     .catch((error) => {
-      console.error(error.message)
+      displayMessage('error', error.message)
+    })
+    .then(() => {
+      loading('hide')
     })
 });
 
@@ -132,6 +141,7 @@ signOut = () => {
 
 signInForm.addEventListener('submit', event => {
   event.preventDefault()
+  loading('show')
 
   const email = document.getElementById('sign-in-email').value
   const password = document.getElementById('sign-in-password').value
@@ -142,6 +152,66 @@ signInForm.addEventListener('submit', event => {
       hideAuthElements()
     })
     .catch((error) => {
-      console.error(error.message)
+      displayMessage('error', error.message)
+    })
+    .then(() => {
+      loading('hide')
     })
 })
+
+forgotPasswordForm.addEventListener('submit', event => {
+  event.preventDefault();
+  loading('show')
+
+  var emailAddress = document.getElementById('forgot-password-email').value;
+
+  firebase.auth().sendPasswordResetEmail(emailAddress)
+    .then(() => {
+      forgotPasswordForm.reset()
+      displayMessage('success', 'Message sent. Please check your email')
+    })
+    .catch(error => {
+      displayMessage('error', error.message)
+    })
+    .then(() => {
+      loading('hide')
+    })
+})
+
+const authMessage = document.getElementById('message');
+
+let messageTimeout
+
+displayMessage = (type, message) => {
+  if (type === 'error') {
+    authMessage.style.borderColor = 'red'
+    authMessage.style.color = 'red'
+    authMessage.style.display = 'block'
+  } else if (type === 'success') {
+    authMessage.style.borderColor = 'green'
+    authMessage.style.color = 'green'
+    authMessage.style.display = 'block'
+  }
+
+  authMessage.innerHTML = message
+  messageTimeout = setTimeout(() => {
+    authMessage.innerHTML = ''
+    authMessage.style.display = 'none'
+  }, 7000)
+}
+
+clearMessage = () => {
+  clearTimeout(messageTimeout)
+  authMessage.innerHTML = ''
+  authMessage.style.display = 'none'
+}
+
+loading = action => {
+  if (action === 'show') {
+    document.getElementById('loading-outer-container').style.display = 'block'
+  } else if (action === 'hide') {
+    document.getElementById('loading-outer-container').style.display = 'none'
+  } else {
+    console.log('loading error');
+  }
+}
